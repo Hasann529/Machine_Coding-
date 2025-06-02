@@ -1,20 +1,21 @@
-import { BrowserRouter as Router,  Route, Routes } from 'react-router-dom'
-import './App.css'
-import Home from './components/Home'
-import Toast from './components/Toast'
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./components/Home";
+import Toast from "./components/Toast";
+import Star from "./components/Star";
+import Pagination from "./components/Pagination";
 
 function App() {
-
   return (
-    <Router>    
+    <Router>
       <Routes>
-     <Route path='/' element={<Home />}  />
-          <Route path='/toast' element={<Toast />}  />
-     </Routes>
-     </Router>
-
-  )     
+        <Route path="/" element={<Home />} />
+        <Route path="/toast" element={<Toast />} />
+        <Route path="/star" element={<Star />} />
+         <Route path="/pagination" element={<Pagination />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
