@@ -14,6 +14,10 @@ const Otp = () => {
   const handleChange = (e: any, inp:any) => {
     const input = e.target;
   const value = input.value;
+  if(value == ""){
+    setCurr(inp-1)
+    return;
+  }
     if (!/^\d*$/.test(value)) {
     input.value = "";
     return;
