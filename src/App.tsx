@@ -5,6 +5,7 @@ import Toast from "./components/Toast";
 import Star from "./components/Star";
 import Pagination from "./components/Pagination";
 import Otp from "./components/Otp";
+import Carousel from "./components/Carousel";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/star" element={<Star />} />
         <Route path="/pagination" element={<Pagination />} />
         <Route path="/otp" element={<Otp />} />
+        <Route path="/carousel" element={<Carousel />} />
       </Routes>
     </Router>
   );
