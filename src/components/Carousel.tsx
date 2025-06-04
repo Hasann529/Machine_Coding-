@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Carousel = () => {
   const [count, setCount] = useState(1);
-  const [auto, setAuto] = useState(true);
+  const intref = useRef<any>(null);
 
   const landscapeImages: any = {
     1: "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg", // Mountain Lake at Sunrise
@@ -18,19 +18,14 @@ const Carousel = () => {
   };
 
   useEffect(() => {
-    let interval:any;
-
-    if (auto) {
-      interval = setInterval(() => {
+      intref.current = setInterval(() => {
         setCount((prev) => (prev === 10 ? 1 : prev + 1));
       }, 2000);
-    }
+ 
 
-    return () => {
-      console.log("Stopped");
-      if (interval) clearInterval(interval);
-    };
-  }, [auto])
+    return () => {clearInterval(intref.current)};
+  
+  }, [])
 
   return (
     <div
@@ -42,8 +37,10 @@ const Carousel = () => {
     >
       <div
         style={{ width: "100%", height: "80%", position: "relative" }}
-        onMouseEnter={() => setAuto(false)}
-        onMouseLeave={() => setAuto(true)}
+        onMouseEnter={() => clearInterval(intref.current)}
+        onMouseLeave={() =>   intref.current = setInterval(() => {
+        setCount((prev) => (prev === 10 ? 1 : prev + 1));
+      }, 2000)  }
       >
         <button
           onClick={() => setCount((prev) => (prev == 1 ? 10 : prev - 1))}
