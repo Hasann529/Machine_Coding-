@@ -7,6 +7,7 @@ import Pagination from "./components/Pagination";
 import Otp from "./components/Otp";
 import Carousel from "./components/Carousel";
 import InfiniteScroll from "./components/InfiniteScroll";
+import Search from "./components/Search";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/otp" element={<Otp />} />
         <Route path="/carousel" element={<Carousel />} />
         <Route path="/infinite-scroll" element={<InfiniteScroll />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
     </Router>
   );
