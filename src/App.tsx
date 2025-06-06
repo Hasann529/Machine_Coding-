@@ -8,6 +8,7 @@ import Otp from "./components/Otp";
 import Carousel from "./components/Carousel";
 import InfiniteScroll from "./components/InfiniteScroll";
 import Search from "./components/Search";
+import ProgressBar from "./components/ProgressBar";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/carousel" element={<Carousel />} />
         <Route path="/infinite-scroll" element={<InfiniteScroll />} />
         <Route path="/search" element={<Search />} />
+        <Route path="/progress-bar" element={<ProgressBar />} />
       </Routes>
     </Router>
   );
