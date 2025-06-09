@@ -10,6 +10,7 @@ import InfiniteScroll from "./components/InfiniteScroll";
 import Search from "./components/Search";
 import ProgressBar from "./components/ProgressBar";
 import InteractiveShape from "./components/InteractiveShape";
+import TodoApp from "./components/TodoApp";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/progress-bar" element={<ProgressBar />} />
         <Route path="/interactive-shape" element={<InteractiveShape />} />
+        <Route path="/todo-app" element={<TodoApp />} />
+        
       </Routes>
     </Router>
   );
