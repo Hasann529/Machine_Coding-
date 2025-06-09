@@ -11,6 +11,7 @@ import Search from "./components/Search";
 import ProgressBar from "./components/ProgressBar";
 import InteractiveShape from "./components/InteractiveShape";
 import TodoApp from "./components/TodoApp";
+import VirtualizeList from "./components/VirtualizeList";
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
         <Route path="/progress-bar" element={<ProgressBar />} />
         <Route path="/interactive-shape" element={<InteractiveShape />} />
         <Route path="/todo-app" element={<TodoApp />} />
+        <Route path="/virtualize-list" element={<VirtualizeList />} />
+        
         
       </Routes>
     </Router>
