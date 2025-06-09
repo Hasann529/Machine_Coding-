@@ -13,6 +13,7 @@ import InteractiveShape from "./components/InteractiveShape";
 import TodoApp from "./components/TodoApp";
 import VirtualizeList from "./components/VirtualizeList";
 import Stepper from "./components/Stepper";
+import Tab from "./components/Tab";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/todo-app" element={<TodoApp />} />
         <Route path="/virtualize-list" element={<VirtualizeList />} />
         <Route path="/stepper" element={<Stepper />} />
+              <Route path="/tab" element={<Tab />} />
       </Routes>
     </Router>
   );
