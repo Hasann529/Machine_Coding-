@@ -14,6 +14,7 @@ import TodoApp from "./components/TodoApp";
 import VirtualizeList from "./components/VirtualizeList";
 import Stepper from "./components/Stepper";
 import Tab from "./components/Tab";
+import TicTacToe from "./components/TicTacToe";
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
         <Route path="/virtualize-list" element={<VirtualizeList />} />
         <Route path="/stepper" element={<Stepper />} />
               <Route path="/tab" element={<Tab />} />
+                   <Route path="/tic-tac-toe" element={<TicTacToe />} />
+              
       </Routes>
     </Router>
   );
