@@ -99,7 +99,7 @@ const TicTacToe = () => {
       </div>
 
       <div>
-        <button onClick={() => {setGrid( Array.from({ length: 3 }, () => Array(3).fill(null))); setTurn(true) }} >Reset</button>
+        <button onClick={() => {setGrid( Array.from({ length: 3 }, () => Array(3).fill(null))); setTurn(true); setResult(null) }} >Reset</button>
       </div>
     </div>
   );
