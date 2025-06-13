@@ -68,7 +68,7 @@ const TicTacToe = () => {
     >
       {grid.map((row, rIdx) => (
         <div style={{ display: "flex" }}>
-          {row.map((col, cIdx) => (
+          {row.map((_, cIdx) => (
             <div
 
               onClick={() => grid[rIdx][cIdx] === null && result === null  &&  handleClick(rIdx, cIdx) }
