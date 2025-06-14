@@ -20,6 +20,8 @@ import MemoryGame from "./components/MemoryGame";
 import TrafficLight from "./components/TrafficLight";
 import DragNDrop from "./components/DragNDrop";
 import FileExplorer from "./components/FileExplorer";
+import NestedComment from "./components/NestedComment";
+import FAQ from "./components/FAQ";
 
 function App() {
   return (
@@ -45,6 +47,9 @@ function App() {
         <Route path="/file-explorer" element={<FileExplorer />} />
         <Route path="/traffic-light" element={<TrafficLight />} />
         <Route path="/drag-n-drop" element={<DragNDrop />} />
+        <Route path="/nested-comment" element={<NestedComment />} />
+        <Route path="/faq" element={<FAQ />} />
+        
       </Routes>
     </Router>
   );
