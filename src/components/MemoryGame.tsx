@@ -38,7 +38,6 @@ setPair({first:null , second:null})
   };
 
   useEffect(() => {
-    console.log(pair , "Pair")
     if (pair.second !== null) {
       setTimeout(checkNumbers, 3000);
     }
