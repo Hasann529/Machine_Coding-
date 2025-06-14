@@ -16,9 +16,10 @@ import Stepper from "./components/Stepper";
 import Tab from "./components/Tab";
 import TicTacToe from "./components/TicTacToe";
 import MemoryGame from "./components/MemoryGame";
-import NestedComment from "./components/NestedComment";
+// import NestedComment from "./components/NestedComment";
 import TrafficLight from "./components/TrafficLight";
 import DragNDrop from "./components/DragNDrop";
+import FileExplorer from "./components/FileExplorer";
 
 function App() {
   return (
@@ -40,7 +41,8 @@ function App() {
         <Route path="/tab" element={<Tab />} />
         <Route path="/tic-tac-toe" element={<TicTacToe />} />
         <Route path="/memory-game" element={<MemoryGame />} />
-        <Route path="/nested-comment" element={<NestedComment />} />
+          <Route path="/memory-game" element={<MemoryGame />} />
+        <Route path="/file-explorer" element={<FileExplorer />} />
         <Route path="/traffic-light" element={<TrafficLight />} />
         <Route path="/drag-n-drop" element={<DragNDrop />} />
       </Routes>
