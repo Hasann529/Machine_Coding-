@@ -22,6 +22,7 @@ import FileExplorer from "./components/FileExplorer";
 import NestedComment from "./components/NestedComment";
 import FAQ from "./components/FAQ";
 import Modal from "./components/Modal";
+import TypingEffect from "./components/TypingEffect";
 
 function App() {
   return (
@@ -50,6 +51,8 @@ function App() {
         <Route path="/nested-comment" element={<NestedComment />} />
         <Route path="/faq" element={<FAQ />} />
             <Route path="/modal" element={<Modal />} />
+                <Route path="/typing-effect" element={<TypingEffect />} />
+            
         
       </Routes>
     </Router>
