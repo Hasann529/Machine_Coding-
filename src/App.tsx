@@ -24,6 +24,7 @@ import FAQ from "./components/FAQ";
 import Modal from "./components/Modal";
 import TypingEffect from "./components/TypingEffect";
 import FileUploader from "./components/FileUploader";
+import SnakeGame from "./components/SnakeGame";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
             <Route path="/modal" element={<Modal />} />
                 <Route path="/typing-effect" element={<TypingEffect />} />
                   <Route path="/file-uploader" element={<FileUploader />} />
+                     <Route path="/snake-game" element={<SnakeGame />} />
                 
             
         
