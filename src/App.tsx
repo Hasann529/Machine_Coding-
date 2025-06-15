@@ -22,6 +22,7 @@ import DragNDrop from "./components/DragNDrop";
 import FileExplorer from "./components/FileExplorer";
 import NestedComment from "./components/NestedComment";
 import FAQ from "./components/FAQ";
+import Modal from "./components/Modal";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
         <Route path="/drag-n-drop" element={<DragNDrop />} />
         <Route path="/nested-comment" element={<NestedComment />} />
         <Route path="/faq" element={<FAQ />} />
+            <Route path="/modal" element={<Modal />} />
         
       </Routes>
     </Router>
