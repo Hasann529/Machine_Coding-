@@ -4,58 +4,58 @@ const FAQ = () => {
 
     const [see ,setSee] = useState(-1)
 
-   const [qaList, setQaList] = useState([
+   const qaList = [
     {
       question: "What is the capital of France?",
       answer: "The capital of France is Paris.\nIt is also known as the City of Light.",
-      isVisible: false
+    
     },
     {
       question: "Who wrote 'Romeo and Juliet'?",
       answer: "The play was written by William Shakespeare.\nIt’s one of his most famous tragedies.",
-      isVisible: false
+    
     },
     {
       question: "What is the boiling point of water in Celsius?",
       answer: "Water boils at 100 degrees Celsius.\nThis is under standard atmospheric pressure.",
-      isVisible: false
+    
     },
     {
       question: "What planet is known as the Red Planet?",
       answer: "Mars is called the Red Planet.\nThe red color comes from iron oxide on its surface.",
-      isVisible: false
+    
     },
     {
       question: "What is the largest mammal in the world?",
       answer: "The Blue Whale is the largest mammal.\nIt can grow up to 100 feet in length.",
-      isVisible: false
+    
     },
     {
       question: "What is the square root of 64?",
       answer: "The square root of 64 is 8.\nBecause 8 multiplied by 8 equals 64.",
-      isVisible: false
+    
     },
     {
       question: "Who painted the Mona Lisa?",
       answer: "Leonardo da Vinci painted the Mona Lisa.\nIt’s displayed in the Louvre Museum in Paris.",
-      isVisible: false
+    
     },
     {
       question: "What is the chemical symbol for Gold?",
       answer: "The symbol for Gold is Au.\nIt comes from the Latin word 'Aurum'.",
-      isVisible: false
+    
     },
     {
       question: "What is the longest river in the world?",
       answer: "The Nile is often considered the longest river.\nIt flows through northeastern Africa.",
-      isVisible: false
+    
     },
     {
       question: "What year did World War II end?",
       answer: "World War II ended in 1945.\nIt marked the victory of the Allies over the Axis powers.",
-      isVisible: false
+    
     }
-  ]);
+  ]
 
   return (
     <div 

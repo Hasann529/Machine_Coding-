@@ -16,7 +16,6 @@ import Stepper from "./components/Stepper";
 import Tab from "./components/Tab";
 import TicTacToe from "./components/TicTacToe";
 import MemoryGame from "./components/MemoryGame";
-// import NestedComment from "./components/NestedComment";
 import TrafficLight from "./components/TrafficLight";
 import DragNDrop from "./components/DragNDrop";
 import FileExplorer from "./components/FileExplorer";
