@@ -1,4 +1,4 @@
-import { Children, useState } from "react";
+import {  useState } from "react";
 
 const Main = ({ data, commentId , deleteNode }: any) => {
   const comment = data[commentId];
