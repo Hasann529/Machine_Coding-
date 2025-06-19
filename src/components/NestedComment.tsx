@@ -126,10 +126,17 @@ const NestedComment = () => {
        setData((prev:any) => {
         const dummy = {...prev}
        dummy[parentId].children = dummy[parentId].children.filter((id :any)=> id !== Id)
+
+          const queue = [Id]
+          while(queue.length > 0){
+            const deleteToNode = queue.shift()
+            queue.push(...dummy[deleteToNode].children)
+
+            delete dummy[deleteToNode]
+
+          }
         return dummy
        })
-    
-
   };
 
   const addComment = (value: any, parentId: any) => {
