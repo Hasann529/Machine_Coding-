@@ -27,6 +27,7 @@ import FileUploader from "./components/FileUploader";
 import SnakeGame from "./components/SnakeGame";
 import Crypto from "./components/Crypto";
 import Calendar from "./components/Calendar";
+import IndeterminateCheckBox from "./components/IndeterminateCheckBox";
 
 function App() {
   return (
@@ -48,23 +49,22 @@ function App() {
         <Route path="/tab" element={<Tab />} />
         <Route path="/tic-tac-toe" element={<TicTacToe />} />
         <Route path="/memory-game" element={<MemoryGame />} />
-          <Route path="/memory-game" element={<MemoryGame />} />
+        <Route path="/memory-game" element={<MemoryGame />} />
         <Route path="/file-explorer" element={<FileExplorer />} />
         <Route path="/traffic-light" element={<TrafficLight />} />
         <Route path="/drag-n-drop" element={<DragNDrop />} />
         <Route path="/nested-comment" element={<NestedComment />} />
         <Route path="/faq" element={<FAQ />} />
-            <Route path="/modal" element={<Modal />} />
-                <Route path="/typing-effect" element={<TypingEffect />} />
-                  <Route path="/file-uploader" element={<FileUploader />} />
-                     <Route path="/snake-game" element={<SnakeGame />} />
-                       <Route path="/crypto" element={<Crypto />} />
-                            <Route path="/calendar" element={<Calendar />} />
-                       
-
-                
-            
-        
+        <Route path="/modal" element={<Modal />} />
+        <Route path="/typing-effect" element={<TypingEffect />} />
+        <Route path="/file-uploader" element={<FileUploader />} />
+        <Route path="/snake-game" element={<SnakeGame />} />
+        <Route path="/crypto" element={<Crypto />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route
+          path="/indeterminate-checkBox"
+          element={<IndeterminateCheckBox />}
+        />
       </Routes>
     </Router>
   );
