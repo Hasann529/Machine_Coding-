@@ -1,9 +1,9 @@
-import {  useState } from "react";
+import { useState } from "react";
 
-const Main = ({ data, commentId , deleteNode }: any) => {
+const Main = ({ data, commentId, deleteNode, addComment }: any) => {
   const comment = data[commentId];
   const [reply, setReply] = useState<number | null>(null);
-   const [text, setText] = useState<string>("");
+  const [text, setText] = useState<string>("");
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
@@ -19,7 +19,12 @@ const Main = ({ data, commentId , deleteNode }: any) => {
         >
           {reply === null ? "Reply" : "Cancel"}
         </span>
-        <span onClick={() => deleteNode(comment?.id)} style={{ cursor: "pointer", color: "red" }}>Delete</span>
+        <span
+          onClick={() => deleteNode(comment?.id , comment?.parentId)}
+          style={{ cursor: "pointer", color: "red" }}
+        >
+          Delete
+        </span>
       </div>
 
       {reply === comment?.id && (
@@ -49,6 +54,11 @@ const Main = ({ data, commentId , deleteNode }: any) => {
               padding: "0.5rem 1rem",
               borderRadius: "4px",
             }}
+            onClick={() => {
+              setReply(null);
+              setText("");
+              addComment(text, comment?.id);
+            }}
           >
             Post Reply
           </button>
@@ -56,11 +66,19 @@ const Main = ({ data, commentId , deleteNode }: any) => {
       )}
 
       {comment?.children?.length > 0 && (
-        <div style={{ display: "flex", gap: "2.5rem"  }}>
+        <div style={{ display: "flex", gap: "2.5rem" }}>
           <div style={{ borderLeft: "1px solid black" }}></div>
-          <div style={{ display: "flex", flexDirection: "column" , gap:"1rem" }}>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
+          >
             {comment.children.map((childId: number) => (
-              <Main key={childId} data={data} commentId={childId} deleteNode={deleteNode}  />
+              <Main
+                key={childId}
+                data={data}
+                commentId={childId}
+                deleteNode={deleteNode}
+                addComment={addComment}
+              />
             ))}
           </div>
         </div>
@@ -70,7 +88,7 @@ const Main = ({ data, commentId , deleteNode }: any) => {
 };
 
 const NestedComment = () => {
-  const [data , setData] = useState<any>({
+  const [data, setData] = useState<any>({
     "1": {
       id: 1,
       parentId: null,
@@ -103,24 +121,33 @@ const NestedComment = () => {
     },
   });
 
-  const deleteNode = (Id:any) =>{
-    console.log(Id)
+  const deleteNode = (Id: any , parentId:any) => {
+      console.log(Id  , data[parentId])
+       setData((prev:any) => {
+        const dummy = {...prev}
+       dummy[parentId].children = dummy[parentId].children.filter((id :any)=> id !== Id)
+        return dummy
+       })
+    
 
-   const filtered = Object.entries(data).filter(([key , value]:any) => Number(key) !== Id && value.parentId !== Id  )
-   const cleaned = filtered.map(([key , value]:any) => {
-    return[
-      key,
-      {...value , 
+  };
 
-        children : value.children.filter((it:any) => it !== Id)
-      }
-    ]
-   } )
+  const addComment = (value: any, parentId: any) => {
+    const newId = Object.keys(data).length + 1;
 
-   const updatedData = Object.fromEntries(cleaned); 
-  setData(updatedData);
-
-  }
+    setData((prev: any) => {
+      prev[parentId].children.push(newId);
+      return {
+        ...prev,
+        [newId.toString()]: {
+          id: newId,
+          parentId,
+          value,
+          children: [],
+        },
+      };
+    });
+  };
 
   return (
     <div
@@ -130,11 +157,14 @@ const NestedComment = () => {
         backgroundColor: "white",
       }}
     >
-      <Main data={data} commentId={1} deleteNode={deleteNode}  />
+      <Main
+        data={data}
+        commentId={1}
+        deleteNode={deleteNode}
+        addComment={addComment}
+      />
     </div>
   );
 };
 
 export default NestedComment;
-
-
